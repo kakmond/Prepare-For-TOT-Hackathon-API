@@ -10,12 +10,14 @@ const news = [
       time: "12:00",
       description: "Good",
       aqi: "49",
-      density: "10.5"
+      density: "10.5",
+      suggestion:"dont do anything"
     }, {
       time: "14:00",
       description: "Unhealthy",
       aqi: "153",
-      density: "58.6"
+      density: "58.6",
+      suggestion:"dont go out"
     }]
   },
   {
@@ -24,12 +26,14 @@ const news = [
       time: "5:00",
       description: "Moderate",
       aqi: "80",
-      density: "26"
+      density: "26",
+      suggestion: "chill out"
     }, {
       time: "14:00",
       description: "Unhealthy",
       aqi: "153",
-      density: "58.6"
+      density: "58.6",
+      suggestion: "put a mask"
     }]
   },
   {
@@ -38,7 +42,8 @@ const news = [
       time: "5:00",
       description: "Moderate",
       aqi: "80",
-      density: "26"
+      density: "26",
+      suggestion: "chill out"
     }]
   },
 ]
