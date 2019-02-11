@@ -4,25 +4,25 @@ const newsCollection = admin.firestore().collection('BangborWeather')
 
 const news = [
     {
-        date: "12-7-2540",
-        temperature: "15",
-        weather: "Winter",
-        describtion: "ิBring coat"
-        ,moisture:"70"
-    },
-    {
-        date: "11-2-2562",
-        temperature: "35",
+        date: "4-5-2543",
+        temperature: "35.5",
         weather: "Summer",
         describtion: "Use sunscreen"
-        ,moisture:"68"
+        ,moisture:"67"
     },
     {
-        date: "10-2-2562",
-        temperature: "40",
+        date: "1-7-2555",
+        temperature: "14.2",
+        weather: "Summer",
+        describtion: "ิBring coat"
+        ,moisture:"68.2"
+    },
+    {
+        date: "6-12-2561",
+        temperature: "40.1",
         weather: "Rainy",
         describtion: "Bring umbrella",
-        moisture:"78"
+        moisture:"80"
     },
 ]
 

@@ -47,6 +47,7 @@ router.get('/:id', function (req, res, next) {
                 res_data['return_code'] = '200'
                 res_data['date'] = doc.data().date
                 res_data['report'] = doc.data().report
+                res_data['status'] = doc.data().status
                 res_data['timeStamp'] = doc.data().timeStamp
                 res.send(res_data)
             }

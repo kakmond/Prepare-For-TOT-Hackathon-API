@@ -4,25 +4,25 @@ const newsCollection = admin.firestore().collection('BangpeeyaiWeather')
 
 const news = [
     {
-        date: "12-7-2540",
-        temperature: "15",
-        weather: "Winter",
-        describtion: "ิBring coat"
-        ,moisture:"70"
+        date: "12-7-2560",
+        temperature: "41.8",
+        weather: "Rainy",
+        describtion: "Bring umbrella"
+        ,moisture:"78.2"
     },
     {
-        date: "11-2-2562",
-        temperature: "35",
+        date: "11-2-2561",
+        temperature: "37.3",
         weather: "Summer",
         describtion: "Use sunscreen"
-        ,moisture:"68"
+        ,moisture:"65.1"
     },
     {
-        date: "10-2-2562",
-        temperature: "40",
-        weather: "Rainy",
-        describtion: "Bring umbrella",
-        moisture:"78"
+        date: "1-3-2562",
+        temperature: "14.3",
+        weather: "Winter",
+        describtion: "Bring coat",
+        moisture:"64.2"
     },
 ]
 
