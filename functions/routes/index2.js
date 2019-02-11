@@ -5,6 +5,7 @@ const { firestore, authService, cors, admin } = require('./../config/admin.js')
 
 const aqiCollection = firestore.collection('Bangpeeyai')
 const newsCollection = firestore.collection('BangpeeyaiNews')
+const weatherCollection = firestore.collection('BangpeeyaiWeather')
 
 /* GET all articles. */
 router.get('/', function (req, res, next) {
@@ -56,4 +57,31 @@ router.get('/:id', function (req, res, next) {
             });
     })
 })
+
+router.get('/weather/:id',function(req,res,next){
+    cors(req, res, () => {
+        var uId = req.params.id
+        var res_data = {}
+        weatherCollection.doc(uId).get().then(doc => {
+            if (!doc.exists) {
+                res_data['return_code'] = '400'
+                res.send(res_data)
+            } else {
+                res_data['return_code'] = '200'
+                res_data['date'] = doc.data().date
+                res_data['temperature']=doc.data().temperature
+                res_data['weather'] = doc.data().weather
+                res_data['timeStamp'] = doc.data().timeStamp
+                res_data['describtion']=doc.data().describtion
+                res_data['moisture']=doc.data().moisture
+                res.send(res_data)
+            }
+        })
+            .catch(err => {
+                res_data['return_code'] = '500'
+                res.send(res_data)
+            });
+    })
+})
+
 module.exports = router
