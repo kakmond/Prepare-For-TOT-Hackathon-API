@@ -3,23 +3,23 @@ var router = express.Router()
 
 const { firestore, authService, cors, admin } = require('./../config/admin.js')
 
-const articlesCollection = firestore.collection('articles')
+const aqiCollection = firestore.collection('AQI')
 
 /* GET all articles. */
 router.get('/', function (req, res, next) {
     cors(req, res, () => {
         res.contentType('application/json')
         var res_data = {} // response data
-        var articles = []
-        articlesCollection
+        var data = []
+        aqiCollection.orderBy('timeStamp','desc')
             .get()
             .then(snap => {
                 snap.forEach(doc => {
-                    articles.push(doc.data())
+                    data.push(doc.data())
                 })
                 res_data['return_code'] = '200'
-                res_data['description'] = "Get all news successfully."
-                res_data['result'] = articles
+                res_data['description'] = "Get all aqi data successfully."
+                res_data['result'] = data
                 res.send(res_data)
             })
             .catch(err => {
