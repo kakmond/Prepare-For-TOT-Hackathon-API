@@ -3,7 +3,7 @@ var router = express.Router()
 
 const { firestore, authService, cors, admin } = require('./../config/admin.js')
 
-const aqiCollection = firestore.collection('Bangsaothong')
+const aqiCollection = firestore.collection('Bangbor')
 
 /* GET all articles. */
 router.get('/', function (req, res, next) {

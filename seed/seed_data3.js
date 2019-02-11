@@ -1,49 +1,49 @@
 const { admin } = require('./config/firebaseConfig')
 
-const newsCollection = admin.firestore().collection('Bangsaothong')
+const newsCollection = admin.firestore().collection('Bangbor')
 
 const news = [
 
   {
-    date: "12-7-2540",
+    date: "1-7-2555",
     aqi: [{
-      time: "12:00",
-      description: "Good",
-      aqi: "49",
-      density: "10.5",
-      suggestion:"None"
+      time: "15:00",
+      description: "Hazardous",
+      aqi: "300",
+      density: "100",
+      suggestion:"Everyone should avoid all outdoor exertion"
     }, {
-      time: "14:00",
-      description: "Unhealthy",
-      aqi: "153",
-      density: "58.6",
-      suggestion:"Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion"
+      time: "19:00",
+      description: "Good",
+      aqi: "0",
+      density: "0",
+      suggestion:"None"
     }]
   },
   {
-    date: "11-2-2562",
+    date: "4-5-2543",
     aqi: [{
-      time: "5:00",
+      time: "5:23",
       description: "Moderate",
-      aqi: "80",
-      density: "26",
+      aqi: "99",
+      density: "30.1",
       suggestion: "Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion."
     }, {
-      time: "14:00",
+      time: "14:11",
       description: "Unhealthy",
-      aqi: "153",
-      density: "58.6",
+      aqi: "163",
+      density: "58.7",
       suggestion: "Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion"
     }]
   },
   {
-    date: "10-2-2562",
+    date: "6-12-2561",
     aqi: [{
-      time: "5:00",
-      description: "Moderate",
-      aqi: "80",
-      density: "26",
-      suggestion: "Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion."
+      time: "16:00",
+      description: "Very Unhealthy",
+      aqi: "249",
+      density: "60",
+      suggestion: "Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion."
     }]
   },
 ]
