@@ -74,4 +74,30 @@ router.post('/register', function (req, res, next) {
     })
 })
 
+router.get('/:id', function (req, res, next) {
+    cors(req, res, () => {
+        var uId = req.params.id
+        var res_data = {}
+        userCollection.doc(uId).get().then(doc => {
+            if (!doc.exists) {
+                res_data['return_code'] = '500'
+                res.send(res_data)
+            } else {
+                res_data['return_code'] = '200'
+                res_data['email'] = doc.email
+                res_data['lastname'] = doc.lastname
+                res_data['name'] = doc.name
+                res_data['telephone'] = doc.telephone
+                res_data['userId'] = doc.userId
+                res_data['workplace'] = doc.workplace
+                res.send(res_data)
+            }
+        })
+            .catch(err => {
+                res_data['return_code'] = '500'
+                res.send(res_data)
+            });
+    })
+})
+
 module.exports = router
