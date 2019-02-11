@@ -4,13 +4,13 @@ const newsCollection = admin.firestore().collection('User')
 
 const news = [
   {
-    user:{
-        name: "kong",
-        lastname: "assavavisidchai",
-        email:"kongzahahaplus@gmail.com",
-        id:"5910545833",
-        workplace:"Garena",
-        telephone:"1150"
+    user: {
+      name: "kong",
+      lastname: "assavavisidchai",
+      email: "kongzahahaplus@gmail.com",
+      id: "5910545833",
+      workplace: "Garena",
+      telephone: "1150"
     }
   }
 ]
