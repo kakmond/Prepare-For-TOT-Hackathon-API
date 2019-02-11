@@ -18,6 +18,6 @@ main.use('/api/', app)
 // Expose Express API as a single Cloud Function:
 exports.api = functions.https.onRequest(main)
 
-app.use('/news', indexRouter)
+app.use('/aqi', indexRouter)
 app.use('/user', userRouter)
 
