@@ -80,7 +80,7 @@ router.get('/:id', function (req, res, next) {
         var res_data = {}
         userCollection.doc(uId).get().then(doc => {
             if (!doc.exists) {
-                res_data['return_code'] = '500'
+                res_data['return_code'] = '400'
                 res.send(res_data)
             } else {
                 res_data['return_code'] = '200'
