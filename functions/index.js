@@ -2,6 +2,8 @@ var express = require('express')
 const bodyParser = require('body-parser')
 
 var indexRouter = require('./routes/index')
+var indexRouter2 = require('./routes/index2')
+var indexRouter3 = require('./routes/index3')
 var userRouter = require('./routes/user')
 
 const functions = require('firebase-functions')
@@ -18,6 +20,9 @@ main.use('/api/', app)
 // Expose Express API as a single Cloud Function:
 exports.api = functions.https.onRequest(main)
 
-app.use('/aqi', indexRouter)
+app.use('/Bangsaothong', indexRouter)
 app.use('/user', userRouter)
+app.use('/Bangpeeyai',indexRouter2)
+app.use('/Bangbor',indexRouter3)
+
 
