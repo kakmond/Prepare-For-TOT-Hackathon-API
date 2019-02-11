@@ -29,4 +29,40 @@ router.post('/checkid', function (req, res, next) {
     })
 })
 
+router.post('/register',function(req,res,next){
+    cors(req,res,()=>{
+        var userId=req.body.userId
+        var name=req.body.name
+        var lastname=req.body.lastname
+        var email=req.body.email
+        var workplace=req.body.workplace
+        var telephone=req.body.telephone
+        var uId=req.body.uId
+        var res_data = {}
+        userCollection.doc(userId).get()
+        .then(doc => {
+            if (!doc.exists) {
+                res_data['return_code'] = '500'
+                res.send(res_data)
+            } else {
+                res_data['return_code'] = '200'
+                res_data['userId'] = userId
+                res_data['name'] = name
+                res_data['lastname'] = lastname
+                res_data['email'] = email
+                res_data['workplace'] = workplace
+                res_data['telephone'] = telephone
+                res_data['uId'] = uId
+                console.log(res_data)
+                res.send(res_data)
+            }
+        })
+        .catch(err => {
+            res_data['return_code'] = '500'
+            console.log(err)
+            res.send(res_data)
+        });
+    })
+})
+
 module.exports = router
