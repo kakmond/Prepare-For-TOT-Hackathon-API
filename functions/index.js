@@ -5,7 +5,6 @@ var indexRouter = require('./routes/index')
 var indexRouter2 = require('./routes/index2')
 var indexRouter3 = require('./routes/index3')
 var userRouter = require('./routes/user')
-var tempRouter = require('./routes/user')
 
 const functions = require('firebase-functions')
 
@@ -25,6 +24,5 @@ app.use('/Bangsaothong', indexRouter)
 app.use('/user', userRouter)
 app.use('/Bangpeeyai',indexRouter2)
 app.use('/Bangbor',indexRouter3)
-// app.use('/temp',tempRouter)
 
 

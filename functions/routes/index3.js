@@ -4,6 +4,7 @@ var router = express.Router()
 const { firestore, authService, cors, admin } = require('./../config/admin.js')
 
 const aqiCollection = firestore.collection('Bangbor')
+const newsCollection = firestore.collection('BangborNews')
 
 /* GET all articles. */
 router.get('/', function (req, res, next) {
@@ -31,4 +32,28 @@ router.get('/', function (req, res, next) {
     })
 })
 
+
+/* GET status. */
+router.get('/:id', function (req, res, next) {
+    cors(req, res, () => {
+        var uId = req.params.id
+        var res_data = {}
+        newsCollection.doc(uId).get().then(doc => {
+            if (!doc.exists) {
+                res_data['return_code'] = '400'
+                res.send(res_data)
+            } else {
+                res_data['return_code'] = '200'
+                res_data['date'] = doc.data().date
+                res_data['report'] = doc.data().report
+                res_data['timeStamp'] = doc.data().timeStamp
+                res.send(res_data)
+            }
+        })
+            .catch(err => {
+                res_data['return_code'] = '500'
+                res.send(res_data)
+            });
+    })
+})
 module.exports = router
