@@ -2,6 +2,8 @@ var express = require('express')
 const bodyParser = require('body-parser')
 
 var indexRouter = require('./routes/index')
+var userRouter = require('./routes/user')
+
 const functions = require('firebase-functions')
 
 var app = express()
@@ -17,3 +19,4 @@ main.use('/api/', app)
 exports.api = functions.https.onRequest(main)
 
 app.use('/news', indexRouter)
+app.use('/user', userRouter)
