@@ -84,12 +84,12 @@ router.get('/:id', function (req, res, next) {
                 res.send(res_data)
             } else {
                 res_data['return_code'] = '200'
-                res_data['email'] = doc.email
-                res_data['lastname'] = doc.lastname
-                res_data['name'] = doc.name
-                res_data['telephone'] = doc.telephone
-                res_data['userId'] = doc.userId
-                res_data['workplace'] = doc.workplace
+                res_data['email'] = doc.data().email
+                res_data['lastname'] = doc.data().lastname
+                res_data['name'] = doc.data().name
+                res_data['telephone'] = doc.data().telephone
+                res_data['userId'] = doc.data().userId
+                res_data['workplace'] = doc.data().workplace
                 res.send(res_data)
             }
         })
