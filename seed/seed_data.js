@@ -3,10 +3,9 @@ const { admin } = require('./config/firebaseConfig')
 const newsCollection = admin.firestore().collection('AQI')
 
 const news = [
-  {
-    data:[
+  
       {
-        date:"12/7/2540",
+        date:"12-7-2540",
         aqi:{
           time:"12:00",
           description:"Good",
@@ -15,7 +14,7 @@ const news = [
         }
     },
     {
-      date:"11/2/2562",
+      date:"11-2-2562",
       aqi:{
         time:"14:00",
         description:"Unhealthy",
@@ -24,7 +23,7 @@ const news = [
       }
   },
   {
-    date:"10/2/2562",
+    date:"10-2-2562",
     aqi:{
       time:"5:00",
       description:"Moderate",
@@ -32,17 +31,17 @@ const news = [
       density:"26"
     }
 },
-    ],
-  }
 ]
 
 for (var i = 0; i < news.length; i++) {
-  newsCollection
-    .add(news[i])
-    .then(function (docRef) {
-      console.log('Document written with ID: ', docRef.id)
-    })
-    .catch(function (error) {
-      console.error('Error adding document: ', error)
-    })
+  var timeStamp = new Date(news[i].date)
+  news[i].timeStamp = timeStamp.getFullYear()+'-'+(timeStamp.getMonth()+1)+'-'+(timeStamp.getDate())
+  newsCollection.doc(news[i].timeStamp)
+  .set(news[i])
+  .then(function() {
+    console.log("Document successfully written!");
+  })
+  .catch(function(error) {
+    console.error("Error writing document: ", error);
+  });
 }
