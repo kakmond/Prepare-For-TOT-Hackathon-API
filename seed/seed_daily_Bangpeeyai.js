@@ -4,19 +4,19 @@ const newsCollection = admin.firestore().collection('BangpeeyaiNews')
 
 const news = [
     {
-        date: "12-7-2540",
+        date: "12-7-2560",
         status: "500",
         report: "We won't work today due to PM2.5!"
     },
     {
-        date: "11-2-2562",
+        date: "1-3-2562",
         status: "200",
         report: "We work as normal :)"
     },
     {
-        date: "10-2-2562",
+        date: "11-2-2561",
         status: "500",
-        report: "We work as normal :)"
+        report: "We won't work today due to PM2.5!"
     },
 ]
 
