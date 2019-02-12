@@ -11,7 +11,7 @@ const news = [
         ,moisture:"78.2"
     },
     {
-        date: "11-2-2561",
+        date: "11-3-2561",
         temperature: "37.3",
         weather: "Summer",
         describtion: "Use sunscreen"

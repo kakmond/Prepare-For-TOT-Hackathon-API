@@ -37,7 +37,7 @@ const news = [
     }]
   },
   {
-    date: "11-2-2561",
+    date: "11-3-2561",
     aqi: [{
       time: "16:00",
       description: "Very Unhealthy",

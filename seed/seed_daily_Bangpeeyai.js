@@ -14,7 +14,7 @@ const news = [
         report: "We work as normal :)"
     },
     {
-        date: "11-2-2561",
+        date: "11-3-2561",
         status: "500",
         report: "We won't work today due to PM2.5!"
     },
